@@ -7,6 +7,7 @@ Beyond arrays, binary search can also be applied to the solution space of proble
 Consider binary search in the following cases:
 - Find a target value in sorted input (e.g., an array)
 - Monotonic nature in the answer, e.g., if answer `x` is valid, `x-1` is guaranteed to be valid as well
+- Kth smallest value that meets a certain condition, can be transformed into solution space binary search "the smallest value such that # smaller values >= k"
 
 # Examples
 
