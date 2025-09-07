@@ -67,7 +67,7 @@ A more complex "solution space" binary search, marked as LeetCode hard, [2040. K
 But once you understand the pattern, it should really be a medium:
 ```
 long long kthSmallestProduct(vector<int>& nums1, vector<int>& nums2, long long k) {
-    // find the smallest value "guess" s.t., number of values that are smaller or equal than "guess" >= k
+    // find the smallest value "guess" s.t., number of product values that are smaller or equal than "guess" >= k
 
     // optimization tip: linear search on smaller input and binary search on the larger input
     // think about the extreme case when one array has 1 element and the other has 1 million, we'd want to binary search on the million array!
