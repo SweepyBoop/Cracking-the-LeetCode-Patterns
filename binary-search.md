@@ -10,11 +10,11 @@ Generally speaking, consider binary search in the following cases:
 
 # Code templates
 
-Finding the index of the target value in a sorted array:
+Binary search the index of the target value in a sorted array:
 ```
 int binary_search(vector<int>& arr, int target) {
     int left = 0, right = arr.size() - 1;
-    
+
     while (left <= right) {
         int mid = left + (right - left) / 2;
         if (arr[mid] == target) {
@@ -30,5 +30,34 @@ int binary_search(vector<int>& arr, int target) {
     }
 
     return -1;
+}
+```
+
+Binary search in solution space, [LeetCode 1891. Cutting Ribbons](https://leetcode.com/problems/cutting-ribbons/description/?envType=problem-list-v2&envId=binary-search)
+
+Notice the monotonic nature in the answer: if we can cut at least k ribbons with max length of ribbon `x`, `x-1` is also valid
+```
+int maxLength(vector<int>& ribbons, int k) {
+    int low = 1, high = *max_element(ribbons.begin(), ribbons.end());
+
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+        int cuts = 0;
+        for (int r : ribbons) {
+            cuts += r / mid;
+            if (cuts >= k) {
+                break;
+            }
+        }
+
+        if (cuts >= k) { // mid is a valid answer, look for a bigger answer
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+
+    return high; // return high if we're looking for max / rightmost, etc. return low otherwise
 }
 ```
