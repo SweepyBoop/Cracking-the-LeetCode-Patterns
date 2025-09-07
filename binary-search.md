@@ -64,7 +64,7 @@ int maxLength(vector<int>& ribbons, int k) {
 
 A more complex "solution space" binary search, marked as LeetCode hard, [2040. Kth Smallest Product of Two Sorted Arrays](https://leetcode.com/problems/kth-smallest-product-of-two-sorted-arrays/?envType=problem-list-v2&envId=binary-search)
 
-But once you understand the pattern, it should really be an medium:
+But once you understand the pattern, it should really be a medium:
 ```
 long long kthSmallestProduct(vector<int>& nums1, vector<int>& nums2, long long k) {
     // find the smallest value "guess" s.t., number of values that are smaller or equal than "guess" >= k
